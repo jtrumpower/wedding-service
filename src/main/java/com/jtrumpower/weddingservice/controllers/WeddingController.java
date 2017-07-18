@@ -1,13 +1,31 @@
 package com.jtrumpower.weddingservice.controllers;
 
+import com.jtrumpower.weddingservice.controllers.beans.entities.Guest;
+import com.jtrumpower.weddingservice.services.GuestsService;
+import java.util.List;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
 @RestController
-class GreetingController {
+class WeddingController {
 
-    @RequestMapping("/")
-    public String greeting() {
-        return "hellow world";
+    @Autowired
+    GuestsService guestsService;
+
+    @RequestMapping(value = "/guests", method = RequestMethod.GET)
+    public List<Guest> getAllGuests() {
+        return guestsService.findAllGuests();
+    }
+
+    @RequestMapping(value = "/guests", method = RequestMethod.POST)
+    public Guest addGuest(@RequestBody Guest guest) {
+
+        return guestsService.addGuest(guest);
     }
 }

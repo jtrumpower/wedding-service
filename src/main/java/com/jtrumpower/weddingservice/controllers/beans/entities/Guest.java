@@ -1,5 +1,7 @@
 package com.jtrumpower.weddingservice.controllers.beans.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,16 +14,16 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "guests")
-public class Guests {
+public class Guest implements Serializable {
 
   @Id
-  @GeneratedValue(strategy= GenerationType.AUTO)
+  @GeneratedValue
   private Long id;
 
-  @Column(name="firstName", nullable=false)
+  @Column(name="first_name", nullable=false)
   private String firstName;
 
-  @Column(name="lastName", nullable=false)
+  @Column(name="last_name", nullable=false)
   private String lastName;
 
   @Column(name="email", nullable=true)
@@ -31,7 +33,7 @@ public class Guests {
   private int numberOfGuests;
 
   @Column(name="event", nullable=false)
-  private String event;
+  private String eventType;
 
   @Column(name="dietary_restriction", nullable=false)
   private String dietaryRestriction;
@@ -77,12 +79,12 @@ public class Guests {
     this.numberOfGuests = numberOfGuests;
   }
 
-  public String getEvent() {
-    return event;
+  public String getEventType() {
+    return eventType;
   }
 
-  public void setEvent(String event) {
-    this.event = event;
+  public void setEventType(String eventType) {
+    this.eventType = eventType;
   }
 
   public String getDietaryRestriction() {
