@@ -1,6 +1,0 @@
-com/jtrumpower/weddingservice/controllers/beans/entities/Guest.class
-com/jtrumpower/weddingservice/services/GuestsService.class
-com/jtrumpower/weddingservice/services/GuestsServiceImpl.class
-com/jtrumpower/weddingservice/controllers/GreetingController.class
-com/jtrumpower/weddingservice/repositories/GuestsRepository.class
-com/jtrumpower/weddingservice/WeddingServiceApplication.class
