@@ -82,6 +82,7 @@
 								<configuration>
 									<tasks>
 										<delete file="${project.build.outputDirectory}/application.properties"/>
+										<delete file="${project.build.outputDirectory}/live-application.properties"/>
 										<copy file="src/main/resources/live-application.properties"
 											tofile="${project.build.outputDirectory}/application.properties"/>
 									</tasks>
