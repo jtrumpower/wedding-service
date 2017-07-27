@@ -13,4 +13,6 @@ public interface GuestsService {
   List<Guest> findAllGuestByLastName();
 
   Guest addGuest(Guest guest);
+
+  String checkStatus(Guest guest);
 }

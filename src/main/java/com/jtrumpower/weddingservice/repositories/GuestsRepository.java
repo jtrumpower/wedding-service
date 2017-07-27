@@ -11,4 +11,6 @@ public interface GuestsRepository extends CrudRepository<Guest, Long> {
 
   List<Guest> findByLastName(String lastName);
   List<Guest> findAll();
+
+  Guest findGuestByFirstNameLikeAndLastNameLike(String firstName, String lastName);
 }

@@ -12,19 +12,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController
+@RequestMapping(value = "/guests")
 class WeddingController {
 
     @Autowired
     GuestsService guestsService;
 
-    @RequestMapping(value = "/guests", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public List<Guest> getAllGuests() {
         return guestsService.findAllGuests();
     }
 
-    @RequestMapping(value = "/guests", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Guest addGuest(@RequestBody Guest guest) {
 
         return guestsService.addGuest(guest);
+    }
+
+    @RequestMapping(value = "status", method = RequestMethod.POST)
+    public String guestStatus(@RequestBody Guest guest) {
+
+        return guestsService.checkStatus(guest);
     }
 }

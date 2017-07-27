@@ -18,7 +18,6 @@ public class GuestsServiceImpl implements GuestsService {
   @Override
   public List<Guest> findAllGuests() {
     return guestsRepository.findAll();
-
   }
 
   @Override
@@ -31,5 +30,17 @@ public class GuestsServiceImpl implements GuestsService {
     guestsRepository.save(guest);
 
     return guest;
+  }
+
+  @Override
+  public String checkStatus(Guest guest) {
+    Guest foundGuest = guestsRepository.findGuestByFirstNameLikeAndLastNameLike(guest.getFirstName(), guest.getLastName());
+    String status;
+    if(foundGuest != null) {
+      status = foundGuest.getFirstName() + " " + foundGuest.getLastName() + " has already submitted an RSVP";
+    } else {
+      status = guest.getFirstName() + " " + guest.getLastName() + " has not yet submitted an RSVP";
+    }
+    return status;
   }
 }
