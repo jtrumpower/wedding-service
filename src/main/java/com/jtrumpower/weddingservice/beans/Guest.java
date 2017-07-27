@@ -1,11 +1,9 @@
-package com.jtrumpower.weddingservice.controllers.beans.entities;
+package com.jtrumpower.weddingservice.beans;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -37,6 +35,9 @@ public class Guest implements Serializable {
 
   @Column(name="dietary_restriction", nullable=false)
   private String dietaryRestriction;
+
+  @Column(name="attending")
+  private boolean attending;
 
 
   public Long getId() {
@@ -93,5 +94,13 @@ public class Guest implements Serializable {
 
   public void setDietaryRestriction(String dietaryRestriction) {
     this.dietaryRestriction = dietaryRestriction;
+  }
+
+  public boolean isAttending() {
+    return attending;
+  }
+
+  public void setAttending(boolean attending) {
+    this.attending = attending;
   }
 }

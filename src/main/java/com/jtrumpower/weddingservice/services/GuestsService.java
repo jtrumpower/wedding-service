@@ -1,6 +1,6 @@
 package com.jtrumpower.weddingservice.services;
 
-import com.jtrumpower.weddingservice.controllers.beans.entities.Guest;
+import com.jtrumpower.weddingservice.beans.Guest;
 import java.util.List;
 
 /**

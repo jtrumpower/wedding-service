@@ -1,6 +1,6 @@
 package com.jtrumpower.weddingservice.repositories;
 
-import com.jtrumpower.weddingservice.controllers.beans.entities.Guest;
+import com.jtrumpower.weddingservice.beans.Guest;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,9 +1,8 @@
 package com.jtrumpower.weddingservice.controllers;
 
-import com.jtrumpower.weddingservice.controllers.beans.entities.Guest;
+import com.jtrumpower.weddingservice.beans.Guest;
 import com.jtrumpower.weddingservice.services.GuestsService;
 import java.util.List;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
