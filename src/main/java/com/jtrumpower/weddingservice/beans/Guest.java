@@ -24,7 +24,7 @@ public class Guest implements Serializable {
   @Column(name="last_name", nullable=false)
   private String lastName;
 
-  @Column(name="email", nullable=true)
+  @Column(name="email")
   private String email;
 
   @Column(name="number_of_guests", nullable=false)
@@ -33,10 +33,10 @@ public class Guest implements Serializable {
   @Column(name="event", nullable=false)
   private String eventType;
 
-  @Column(name="dietary_restriction", nullable=false)
+  @Column(name="dietary_restriction")
   private String dietaryRestriction;
 
-  @Column(name="attending")
+  @Column(name="attending", nullable = false)
   private boolean attending;
 
 

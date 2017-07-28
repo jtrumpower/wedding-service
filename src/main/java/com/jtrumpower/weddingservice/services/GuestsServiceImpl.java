@@ -33,6 +33,18 @@ public class GuestsServiceImpl implements GuestsService {
   }
 
   @Override
+  public Guest updateGuest(Guest guest) {
+    guestsRepository.save(guest);
+
+    return guest;
+  }
+
+  @Override
+  public void deleteGuest(Long guest) {
+    guestsRepository.delete(guest);
+  }
+
+  @Override
   public String checkStatus(Guest guest) {
     Guest foundGuest = guestsRepository.findGuestByFirstNameLikeAndLastNameLike(guest.getFirstName(), guest.getLastName());
     String status;
