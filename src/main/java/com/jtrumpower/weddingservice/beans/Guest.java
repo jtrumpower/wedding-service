@@ -36,8 +36,11 @@ public class Guest implements Serializable {
   @Column(name="dietary_restriction")
   private String dietaryRestriction;
 
-  @Column(name="attending", nullable = false)
+  @Column(name="attending")
   private boolean attending;
+
+  @Column(name="hotel")
+  private boolean hotel;
 
 
   public Long getId() {
@@ -102,5 +105,13 @@ public class Guest implements Serializable {
 
   public void setAttending(boolean attending) {
     this.attending = attending;
+  }
+
+  public boolean isHotel() {
+    return hotel;
+  }
+
+  public void setHotel(boolean hotel) {
+    this.hotel = hotel;
   }
 }
